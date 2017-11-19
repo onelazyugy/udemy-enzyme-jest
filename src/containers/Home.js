@@ -25,7 +25,7 @@ class Home extends Component {
       <div>
         <h2 className="mui--text-center">Home Page</h2>
         <div style={{marginLeft: "25%", marginRight: "25%"}}>
-          <Input label="Name" onChange={this.inputOnChange} floatingLabel={true} value={this.props.homeInfo.inputValue}/>
+          <Input label="Home" onChange={this.inputOnChange} floatingLabel={true} value={this.props.homeInfo.inputValue}/>
           <pre>Home Info: {JSON.stringify(this.props.homeInfo)}</pre>
           <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
           <pre>Contact Info: {JSON.stringify(this.props.contactInfo)}</pre>
