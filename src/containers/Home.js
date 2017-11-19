@@ -13,7 +13,7 @@ class Home extends Component {
   }
 
   inputOnChange = (event) => {
-    console.log('input:', event.target.value);
+    console.log('home input:', event.target.value);
     this.props.storeHomeInfo(event.target.value);
   };
 
@@ -25,15 +25,12 @@ class Home extends Component {
           <Link to={"/about"}><FlatButton label="About" style={{color: "black"}}/></Link>
           <Link to={"/contact"}><FlatButton label="Contact" style={{color: "black"}}/></Link>
         </h4>
+        <h4>Home Page</h4>
         <div>
           <Input label="Name" onChange={this.inputOnChange} floatingLabel={true} />
         </div>
-        <pre>{JSON.stringify(this.props.homeInfo)}</pre>
-        <h4>Home Page</h4>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        <pre>Home Info: {JSON.stringify(this.props.homeInfo)}</pre>
+        <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
       </div>
     );
   };
@@ -41,7 +38,8 @@ class Home extends Component {
 
 function mapStateToProps(state) {
   return { 
-      homeInfo: state.storeHomeInfoReducer
+      homeInfo: state.storeHomeInfoReducer,
+      aboutInfo: state.storeAboutInfoReducer
   };
 }
 
