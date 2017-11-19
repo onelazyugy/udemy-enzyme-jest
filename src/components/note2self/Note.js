@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Input from 'muicss/lib/react/input';
 import Form from 'muicss/lib/react/form';
 import Button from 'muicss/lib/react/button';
+import RenderNote from './RenderNote';
 
 class Note extends Component {
     constructor() {
@@ -36,7 +37,7 @@ class Note extends Component {
             {
                 this.state.notes.map((note, index) => {
                     return (
-                        <div key={index}>{note.text}</div>
+                        <RenderNote key={index} note={note} />
                     )
                 })
             }
