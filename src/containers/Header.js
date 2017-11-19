@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 class Header extends Component {
   constructor(props) {
     super(props);
-    console.log('Header page props:', this.props);
   }
 
   render = () => {
@@ -23,6 +22,7 @@ class Header extends Component {
       <Link to={"/"}><FlatButton label="Home" style={{color: "black"}}/></Link>
       <Link to={"/about"}><FlatButton label="About" style={{color: "black"}}/></Link>
       <Link to={"/contact"}><FlatButton label="Contact" style={{color: "black"}}/></Link>
+      <Link to={"/notetoself"}><FlatButton label="Note" style={{color: "black"}}/></Link>
     </div>;
     return (
       <div>

@@ -9,7 +9,6 @@ import { storeHomeInfo } from '../actions/homeActions';
 class Home extends Component {
   constructor(props) {
     super(props);
-    console.log('About page props:', this.props);
   }
 
   inputOnChange = (event) => {

@@ -7,6 +7,7 @@ import Home from "./containers/Home";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
 import Footer from "./components/Footer";
+import Note from "./components/Note";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
                 <Route exact={true} path="/" component={Home} />
                 <Route exact={true} path="/about" component={About} />
                 <Route exact={true} path="/contact" component={Contact} />
+                <Route exact={true} path="/notetoself" component={Note} />
               </div>
               <Footer />
             </div>

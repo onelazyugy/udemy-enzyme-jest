@@ -10,3 +10,6 @@ $ npm run start - will automatically open the UI on your favorite browser (http:
 ## Run test
 $ npm test - run all tests<br />
 
+## Source
+https://github.com/15Dkatz/react-testing
+

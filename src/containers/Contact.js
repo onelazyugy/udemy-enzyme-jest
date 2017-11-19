@@ -7,7 +7,6 @@ import { storeContactInfo } from '../actions/contactActions';
 class Contact extends Component {
   constructor(props) {
     super(props);
-    console.log('About page props:', this.props);
   }
 
   inputOnChange = (event) => {
