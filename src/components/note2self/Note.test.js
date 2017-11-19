@@ -12,7 +12,7 @@ describe('Note', () => {
     });
 
     it('renders the clear button', () => {
-        console.log(note.debug());
+        // console.log(note.debug());
         console.log('FIND:', note.find('.mui-btn').length);
         console.log('AT 0:', note.find('.mui-btn').at(1).text());     
         expect(note.find('.mui-btn').at(1).text()).toEqual('Clear Notes');
