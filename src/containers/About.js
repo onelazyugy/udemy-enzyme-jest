@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Input from 'muicss/lib/react/input';
-import { storeAboutInfo } from '../actions/homeActions';
+import { storeAboutInfo } from '../actions/aboutActions';
 
 class About extends Component {
   constructor(props) {
