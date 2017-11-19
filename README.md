@@ -1,5 +1,5 @@
-# REACTJS AND REDUCT SEED APP
-<h4>A template for reactjs with redux<br />
+# REACTJS AND REDUCT WITH ENZYME AND JEST
+<h4>A reactjs app with reduct, enzyme and jest<br />
 
 ## Installation
 $ npm install - pull all ui dependencies <br />

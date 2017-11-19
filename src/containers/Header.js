@@ -27,7 +27,7 @@ class Header extends Component {
     return (
       <div>
         <AppBar style={bg}
-          title={<Link to={"/"}>ReactJS Redux Skeletal app</Link>}
+          title={<Link to={"/"}>ReactJS Redux Enzyme Jest</Link>}
           iconElementLeft={<Link to={"/"}><img src={reactLogo} className="app-logo" alt="logo" /></Link>}
           iconElementRight={menu}
         />
