@@ -48,7 +48,7 @@ class Note extends Component {
             <h2>Note to Self</h2>
             <Form inline={true}>
                 <Input id="note" label="Note" floatingLabel={true} onChange={this.getNote}/>
-                <Button variant="raised" onClick={this.submit}>Submit</Button>
+                <Button id="submitNote" variant="raised" onClick={this.submit}>Submit</Button>
             </Form>
             {
                 this.state.notes.map((note, index) => {
@@ -58,7 +58,7 @@ class Note extends Component {
                 })
             }
             <hr/>
-            <Button variant="raised" onClick={this.clear}>Clear Notes</Button>
+            <Button id="clearNote" variant="raised" onClick={this.clear}>Clear Notes</Button>
         </div>
         );
   }
