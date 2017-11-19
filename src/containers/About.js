@@ -12,7 +12,10 @@ class About extends Component {
 
   inputOnChange = (event) => {
     console.log('about input:', event.target.value);
-    this.props.storeAboutInfo(event.target.value);
+    const inputValue = event.target.value;
+    let aboutInfo = {};
+    aboutInfo.inputValue = inputValue;
+    this.props.storeAboutInfo(aboutInfo);
   };
 
   render = () => {
@@ -22,8 +25,9 @@ class About extends Component {
         <div>
           <Input label="About" onChange={this.inputOnChange} floatingLabel={true} />
         </div>
-        <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
         <pre>Home Info: {JSON.stringify(this.props.homeInfo)}</pre>
+        <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
+        <pre>Contact Info: {JSON.stringify(this.props.contactInfo)}</pre>
       </div>
     );
   };
@@ -38,7 +42,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
   return {
       aboutInfo: state.storeAboutInfoReducer,
-      homeInfo: state.storeHomeInfoReducer
+      homeInfo: state.storeHomeInfoReducer,
+      contactInfo: state.storeContactInfoReducer
   };
 }
 

@@ -14,7 +14,10 @@ class Home extends Component {
 
   inputOnChange = (event) => {
     console.log('home input:', event.target.value);
-    this.props.storeHomeInfo(event.target.value);
+    const inputValue = event.target.value;
+    let homeInfo = {};
+    homeInfo.inputValue = inputValue;
+    this.props.storeHomeInfo(homeInfo);
   };
 
   render = () => {
@@ -31,6 +34,7 @@ class Home extends Component {
         </div>
         <pre>Home Info: {JSON.stringify(this.props.homeInfo)}</pre>
         <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
+        <pre>Contact Info: {JSON.stringify(this.props.contactInfo)}</pre>
       </div>
     );
   };
@@ -39,7 +43,8 @@ class Home extends Component {
 function mapStateToProps(state) {
   return { 
       homeInfo: state.storeHomeInfoReducer,
-      aboutInfo: state.storeAboutInfoReducer
+      aboutInfo: state.storeAboutInfoReducer,
+      contactInfo: state.storeContactInfoReducer
   };
 }
 
