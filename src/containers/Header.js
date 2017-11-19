@@ -17,12 +17,19 @@ class Header extends Component {
       position: "fixed",
       top: 0
     };
+    const menu = 
+    <div>
+      <Link to={"/"}><FlatButton label="Home" style={{color: "black"}}/></Link>
+      <Link to={"/about"}><FlatButton label="About" style={{color: "black"}}/></Link>
+      <Link to={"/contact"}><FlatButton label="Contact" style={{color: "black"}}/></Link>
+    </div>;
     return (
+      
       <div>
         <AppBar style={bg}
           title={<Link to={"/"}>Complaints</Link>}
           iconElementLeft={<Link to={"/"}><img src={logo} className="app-logo" alt="logo" /></Link>}
-          iconElementRight={<Link to={"/about"}><FlatButton label="About" style={{color: "black"}}/></Link>}
+          iconElementRight={menu}
         />
       </div>
     );

@@ -23,18 +23,13 @@ class Home extends Component {
   render = () => {
     return (
       <div>
-        <h4>
-          <Link to={"/"}><FlatButton label="Home" style={{color: "black"}}/></Link>
-          <Link to={"/about"}><FlatButton label="About" style={{color: "black"}}/></Link>
-          <Link to={"/contact"}><FlatButton label="Contact" style={{color: "black"}}/></Link>
-        </h4>
-        <h4>Home Page</h4>
-        <div>
-          <Input label="Name" onChange={this.inputOnChange} floatingLabel={true} />
+        <h2 className="mui--text-center">Home Page</h2>
+        <div style={{marginLeft: "25%", marginRight: "25%"}}>
+          <Input label="Name" onChange={this.inputOnChange} floatingLabel={true} value={this.props.homeInfo.inputValue}/>
+          <pre>Home Info: {JSON.stringify(this.props.homeInfo)}</pre>
+          <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
+          <pre>Contact Info: {JSON.stringify(this.props.contactInfo)}</pre>
         </div>
-        <pre>Home Info: {JSON.stringify(this.props.homeInfo)}</pre>
-        <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
-        <pre>Contact Info: {JSON.stringify(this.props.contactInfo)}</pre>
       </div>
     );
   };
