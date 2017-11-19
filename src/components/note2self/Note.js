@@ -3,6 +3,9 @@ import Input from 'muicss/lib/react/input';
 import Form from 'muicss/lib/react/form';
 import Button from 'muicss/lib/react/button';
 import RenderNote from './RenderNote';
+import { bake_cookie, read_cookie, delete_cookie } from 'sfcookies';
+
+const cookie_key = 'NOTES';
 
 class Note extends Component {
     constructor() {
@@ -12,6 +15,12 @@ class Note extends Component {
             notes: []
         }
     }
+
+    componentDidMount = () => {
+        this.setState({
+            notes: read_cookie(cookie_key)
+        });
+    };
 
     getNote = (event) => {
         this.setState({text: event.target.value});
@@ -24,6 +33,13 @@ class Note extends Component {
         notes.push({ text });
 
         this.setState({ notes });
+
+        bake_cookie(cookie_key, this.state.notes);
+    };
+
+    clear = () => {
+        delete_cookie(cookie_key);
+        this.setState({ notes: [] })
     };
 
     render() {
@@ -41,6 +57,8 @@ class Note extends Component {
                     )
                 })
             }
+            <hr/>
+            <Button variant="raised" onClick={this.clear}>Clear Notes</Button>
         </div>
         );
   }
