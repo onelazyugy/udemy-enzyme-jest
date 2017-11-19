@@ -7,7 +7,7 @@ import Home from "./containers/Home";
 import About from "./containers/About";
 import Contact from "./containers/Contact";
 import Footer from "./components/Footer";
-import Note from "./components/Note";
+import Note from "./components/note2self/Note";
 
 class App extends Component {
   render() {

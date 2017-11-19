@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import logo from '../media/complaints.png';
 import reactLogo from '../media/logo.svg';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import { Link } from "react-router-dom";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render = () => {
     const bg = {
       background: "#ffffff",

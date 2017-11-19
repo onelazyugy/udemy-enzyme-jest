@@ -5,10 +5,6 @@ import Input from 'muicss/lib/react/input';
 import { storeContactInfo } from '../actions/contactActions';
 
 class Contact extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   inputOnChange = (event) => {
     console.log('contact input:', event.target.value);
     const inputValue = event.target.value;
@@ -22,7 +18,7 @@ class Contact extends Component {
       <div>
         <h2 className="mui--text-center">Contact Page</h2>
         <div style={{marginLeft: "25%", marginRight: "25%"}}>
-          <Input label="Contact" onChange={this.inputOnChange} floatingLabel={true} value={this.props.contactInfo.inputValue} />
+          <Input id="contact" label="Contact" onChange={this.inputOnChange} floatingLabel={true} value={this.props.contactInfo.inputValue || ''} />
           <pre>Home Info: {JSON.stringify(this.props.homeInfo)}</pre>
           <pre>About Info: {JSON.stringify(this.props.aboutInfo)}</pre>
           <pre>Contact Info: {JSON.stringify(this.props.contactInfo)}</pre>

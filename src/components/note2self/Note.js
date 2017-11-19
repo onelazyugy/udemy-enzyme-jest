@@ -30,7 +30,7 @@ class Note extends Component {
         <div className="mui--text-center">
             <h2>Note to Self</h2>
             <Form inline={true}>
-                <Input label="Note" floatingLabel={true} onChange={this.getNote}/>
+                <Input id="note" label="Note" floatingLabel={true} onChange={this.getNote}/>
                 <Button variant="raised" onClick={this.submit}>Submit</Button>
             </Form>
             {
