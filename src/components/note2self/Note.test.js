@@ -12,7 +12,7 @@ describe('Note', () => {
     });
 
     it('renders the clear button', () => {
-        // console.log(note.debug());
+        console.log(note.debug());
         console.log('FIND:', note.find('.mui-btn').length);
         console.log('AT 0:', note.find('.mui-btn').at(1).text());     
         expect(note.find('.mui-btn').at(1).text()).toEqual('Clear Notes');
@@ -30,5 +30,61 @@ describe('Note', () => {
         it('render the submit button from the form', () => {
             expect(note.find('.mui-btn').at(0).text()).toEqual('Submit');
         });
+    });
+
+    describe('when creating a new note', () => {
+        let testNote = 'test note';
+
+        beforeEach(() => {
+            note.find('Input').at(1).simulate('change', {
+                target: {value: testNote}
+            });
+        });
+
+        it('updates the text in state', () => {
+            console.log(note.state());
+            expect(note.state().text).toEqual(testNote);
+        })
+
+        describe('and submitting the new note', () => {
+            beforeEach(() => {
+                note.find('.mui-btn').at(0).simulate('click');
+            });
+
+            // afterEach(() => {
+            //     note.find('.mui-btn').at(1).simulate('click');
+            // });
+
+            it('add the new note to state', () => {
+                console.log(note.state());
+                expect(note.state().notes[0].text).toEqual(testNote);
+            })
+        });
+
+        describe('and remounting the component', () => {
+            let note2;
+
+            beforeEach(() => {
+                note2 = mount(<Note />)
+            });
+
+            it('reads the stored note cookies', () => {
+                console.log(note2.state());
+                expect(note2.state().notes).toEqual([{text: testNote}]);
+            });
+        });
+
+        describe('and clicking the clear button', () => {
+            beforeEach(() => {
+                note.find('.mui-btn').at(1).simulate('click');
+            });
+
+            it('clears the notes in the state', () => {
+                console.log(note.state());
+                expect(note.state().notes).toEqual([]);
+            });
+        });
+
+
     });
 });
