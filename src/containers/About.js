@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import Input from 'muicss/lib/react/input';
 import { storeAboutInfo } from '../actions/aboutActions';
 
@@ -28,12 +27,6 @@ class About extends Component {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ 
-    storeAboutInfo
-  }, dispatch);
-}
-
 function mapStateToProps(state) {
   return {
       aboutInfo: state.storeAboutInfoReducer,
@@ -42,4 +35,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {storeAboutInfo})(About);
+export default connect(mapStateToProps, { storeAboutInfo })(About);

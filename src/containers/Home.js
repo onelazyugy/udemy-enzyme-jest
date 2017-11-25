@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Input from 'muicss/lib/react/input';
 import { storeHomeInfo } from '../actions/homeActions';
@@ -36,10 +35,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ 
-    storeHomeInfo
-  }, dispatch);
-}
-
-export default connect(mapStateToProps, {storeHomeInfo})(Home);
+export default connect(mapStateToProps, { storeHomeInfo })(Home);

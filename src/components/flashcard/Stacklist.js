@@ -1,20 +1,28 @@
-import React, {Component} from "react";
-import stacks from './stacks.json';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import stacks from "./stacks.json";
+import { Link } from "react-router-dom";
+import { setStack } from "../../actions/flashcard/flashcardAction";
 
 class StackList extends Component {
-    render = () => {
-        return(
-            <div>
-                {
-                    stacks.map((stack, i) => {
-                        return(
-                            <h4 key={i}>{stack.title}</h4>
-                        )
-                    })
-                }
-            </div>
-        );
-    }
+  render = () => {
+    console.log("this.props:", this.props);
+    return (
+      <div>
+        {stacks.map((stack, i) => {
+          return (
+            <Link
+              key={i}
+              to="/flashcard/stack"
+              onClick={() => this.props.setStack(stack)}
+            >
+              <h4>{stack.title}</h4>
+            </Link>
+          );
+        })}
+      </div>
+    );
+  };
 }
 
-export default StackList;
+export default connect(null, { setStack })(StackList);

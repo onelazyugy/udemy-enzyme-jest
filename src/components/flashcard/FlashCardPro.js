@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import StackList from './Stacklist';
+import StackList from './StackList';
 
 class FlashCardPro extends Component {
     render = () => {

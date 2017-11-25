@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import Input from 'muicss/lib/react/input';
 import { storeContactInfo } from '../actions/contactActions';
 
@@ -28,12 +27,6 @@ class Contact extends Component {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ 
-    storeContactInfo
-  }, dispatch);
-}
-
 function mapStateToProps(state) {
   return {
       contactInfo: state.storeContactInfoReducer,
@@ -42,4 +35,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {storeContactInfo})(Contact);
+export default connect(mapStateToProps, { storeContactInfo })(Contact);
