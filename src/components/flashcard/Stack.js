@@ -4,19 +4,32 @@ import { Link } from "react-router-dom";
 
 class Stack extends Component {
   render = () => {
-    return (
-      <div>
-        <Link to="/flashcard">Home</Link>
-        <h3>example title</h3>
-        <p>{JSON.stringify(this.props.stack)}</p>
-      </div>
-    );
+    if (this.props.stack.cards) {
+      const { title, cards } = this.props.stack;
+      return (
+        <div>
+          <Link to="/flashcard">Flashcard</Link>
+          <h3>{title}</h3>
+          <br />
+          {cards.map((card, i) => {
+            return <div key={i}>{card.prompt}</div>;
+          })}
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <label>Please <Link to="/flashcard">Go Back</Link> and choose a stack first</label>
+          
+        </div>
+      );
+    }
   };
 }
 
 function mapStateToProps(state) {
   return {
-      stack: state.flashcardReducer
+    stack: state.flashcardReducer
   };
 }
 
