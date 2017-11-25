@@ -8,6 +8,7 @@ import About from "./containers/About";
 import Contact from "./containers/Contact";
 import Footer from "./components/Footer";
 import Note from "./components/note2self/Note";
+import FlashCardPro from "./components/flashcard/FlashCardPro";
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
                 <Route exact={true} path="/about" component={About} />
                 <Route exact={true} path="/contact" component={Contact} />
                 <Route exact={true} path="/notetoself" component={Note} />
+                <Route exact={true} path="/flashcard" component={FlashCardPro} />
               </div>
               <Footer />
             </div>

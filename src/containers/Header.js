@@ -18,6 +18,7 @@ class Header extends Component {
       <Link to={"/about"}><FlatButton label="About" style={{color: "black"}}/></Link>
       <Link to={"/contact"}><FlatButton label="Contact" style={{color: "black"}}/></Link>
       <Link to={"/notetoself"}><FlatButton label="Note" style={{color: "black"}}/></Link>
+      <Link to={"/flashcard"}><FlatButton label="Flash Card" style={{color: "black"}}/></Link>
     </div>;
     return (
       <div>
