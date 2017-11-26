@@ -33,7 +33,7 @@ class StackList extends Component {
 
 function mapStateToProps(state) {
   return {
-    stacks: state.loadStacksReducer
+    stacks: state.stacksReducer
   };
 }
 
