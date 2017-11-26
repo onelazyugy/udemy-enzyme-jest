@@ -2,13 +2,20 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import stacks from "./stacks.json";
 import { Link } from "react-router-dom";
-import { setStack } from "../../actions/flashcard/flashcardAction";
+import { setStack, loadStacks } from "../../actions/flashcard/flashcardAction";
 
 class StackList extends Component {
+  componentDidMount() {
+    //load the stack only once so that we can add our own stack using the UI
+    if (this.props.stacks.length === 0) {
+      this.props.loadStacks(stacks);
+    }
+  }
+
   render = () => {
     return (
       <div>
-        {stacks.map((stack, i) => {
+        {this.props.stacks.map((stack, i) => {
           return (
             <Link
               key={i}
@@ -24,4 +31,10 @@ class StackList extends Component {
   };
 }
 
-export default connect(null, { setStack })(StackList);
+function mapStateToProps(state) {
+  return {
+    stacks: state.loadStacksReducer
+  };
+}
+
+export default connect(mapStateToProps, { setStack, loadStacks })(StackList);
