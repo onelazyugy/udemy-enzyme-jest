@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Card from "./Card";
 
 class Stack extends Component {
   render = () => {
@@ -9,18 +10,21 @@ class Stack extends Component {
       return (
         <div>
           <Link to="/flashcard">Flashcard</Link>
-          <h3>{title}</h3>
-          <br />
-          {cards.map((card, i) => {
-            return <div key={i}>{card.prompt}</div>;
-          })}
+          <div className="mui--text-center">
+            <h3>{title}</h3>
+            <br />
+            {cards.map((card, i) => {
+                return (
+                    <Card key={i} card={card} />
+                );
+            })}
+          </div>
         </div>
       );
     } else {
       return (
         <div>
           <label>Please <Link to="/flashcard">Go Back</Link> and choose a stack first</label>
-          
         </div>
       );
     }
