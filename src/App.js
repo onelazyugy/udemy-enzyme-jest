@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import Note from "./components/note2self/Note";
 import FlashCardPro from "./components/flashcard/FlashCardPro";
 import Stack from "./components/flashcard/Stack";
+import StackForm from "./components/flashcard/StackForm";
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
                 <Route exact={true} path="/notetoself" component={Note} />
                 <Route exact={true} path="/flashcard" component={FlashCardPro} />
                 <Route exact={true} path="/flashcard/stack" component={Stack} />
+                <Route exact={true} path="/flashcard/stack_form" component={StackForm} />
               </div>
               <Footer />
             </div>
