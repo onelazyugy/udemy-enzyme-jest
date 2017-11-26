@@ -33,7 +33,7 @@ class Stack extends Component {
 
 function mapStateToProps(state) {
   return {
-    stack: state.flashcardReducer
+    stack: state.setStackReducer
   };
 }
 

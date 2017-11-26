@@ -6,7 +6,6 @@ import { setStack } from "../../actions/flashcard/flashcardAction";
 
 class StackList extends Component {
   render = () => {
-    console.log("this.props:", this.props);
     return (
       <div>
         {stacks.map((stack, i) => {
