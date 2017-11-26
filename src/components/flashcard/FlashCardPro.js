@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import StackList from "./StackList";
+import StackList from "./Stacklist";
 
 class FlashCardPro extends Component {
   render = () => {

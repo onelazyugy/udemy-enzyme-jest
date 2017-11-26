@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import stacks from "./stacks.json";
+import initialStack from "./stacks.json";
 import { Link } from "react-router-dom";
 import { setStack, loadStacks } from "../../actions/flashcard/flashcardAction";
 
 class StackList extends Component {
   componentDidMount() {
-    //load the stack only once so that we can add our own stack using the UI
+    //load the stack only once so that we can add our own stack using the ui
     if (this.props.stacks.length === 0) {
-      this.props.loadStacks(stacks);
+      this.props.loadStacks(initialStack);
     }
   }
 
